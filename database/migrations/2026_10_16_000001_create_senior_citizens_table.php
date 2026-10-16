@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
+return new class extends Migration { public function up():void {Schema::create('senior_citizens',function(Blueprint $t){$t->id();$t->string('osca_id')->nullable()->unique();$t->string('first_name');$t->string('middle_name')->nullable();$t->string('last_name');$t->string('suffix')->nullable();$t->date('birth_date');$t->string('sex');$t->string('civil_status')->nullable();$t->string('phone')->nullable();$t->string('address');$t->string('barangay');$t->date('registration_date');$t->string('status')->default('Active');$t->text('notes')->nullable();$t->timestamps();});} public function down():void{Schema::dropIfExists('senior_citizens');}};

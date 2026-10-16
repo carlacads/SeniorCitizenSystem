@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
+return new class extends Migration {public function up():void{Schema::create('assistance_requests',function(Blueprint $t){$t->id();$t->foreignId('senior_citizen_id')->constrained()->cascadeOnDelete();$t->string('request_type');$t->text('description');$t->date('date_requested');$t->string('status')->default('Pending');$t->text('review_notes')->nullable();$t->date('date_resolved')->nullable();$t->timestamps();});}public function down():void{Schema::dropIfExists('assistance_requests');}};

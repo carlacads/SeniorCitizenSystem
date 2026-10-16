@@ -1,0 +1,3 @@
+<?php
+namespace App\Models; use Illuminate\Database\Eloquent\Model;
+class SeniorCitizen extends Model { protected $fillable=['osca_id','first_name','middle_name','last_name','suffix','birth_date','sex','civil_status','phone','address','barangay','registration_date','status','notes']; protected $casts=['birth_date'=>'date','registration_date'=>'date']; public function assistanceRequests(){return $this->hasMany(AssistanceRequest::class);} public function benefits(){return $this->hasMany(Benefit::class);} public function getFullNameAttribute(){return trim(implode(' ',array_filter([$this->first_name,$this->middle_name,$this->last_name,$this->suffix])));} }

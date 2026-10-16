@@ -1,0 +1,3 @@
+<?php
+namespace App\Http\Controllers; use App\Models\{SeniorCitizen,AssistanceRequest,Benefit};
+class DashboardController extends Controller { public function index(){return view('dashboard',['seniorCount'=>SeniorCitizen::count(),'activeCount'=>SeniorCitizen::where('status','Active')->count(),'pendingRequests'=>AssistanceRequest::whereIn('status',['Pending','Under Review'])->count(),'unclaimedBenefits'=>Benefit::whereIn('status',['Scheduled','Unclaimed'])->count(),'recentRequests'=>AssistanceRequest::with('seniorCitizen')->latest()->take(6)->get(),'recentBenefits'=>Benefit::with('seniorCitizen')->latest()->take(5)->get()]);} }

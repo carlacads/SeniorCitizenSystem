@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
+return new class extends Migration {public function up():void{Schema::create('benefits',function(Blueprint $t){$t->id();$t->foreignId('senior_citizen_id')->constrained()->cascadeOnDelete();$t->string('benefit_name');$t->string('benefit_type');$t->date('distribution_date')->nullable();$t->string('status')->default('Scheduled');$t->string('reference_no')->nullable();$t->text('notes')->nullable();$t->timestamps();});}public function down():void{Schema::dropIfExists('benefits');}};
