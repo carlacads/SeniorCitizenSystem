@@ -1,7 +1,4 @@
 # Senior Citizen Registry & Assistance Management System (Laravel starter)
-
-A responsive, light-themed Laravel starter for barangay personnel in San Ildefonso, Bulacan. Includes dashboard, senior citizen registry, assistance request tracking, benefit distribution records, and simple reports.
-
 ## Included modules
 - Dashboard with live record counts
 - Senior citizen records: create, read, update, delete, search/filter
