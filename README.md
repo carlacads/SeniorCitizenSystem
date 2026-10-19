@@ -2,43 +2,6 @@
 
 A responsive, light-themed Laravel starter for barangay personnel in San Ildefonso, Bulacan. Includes dashboard, senior citizen registry, assistance request tracking, benefit distribution records, and simple reports.
 
-## Requirements
-- PHP and Composer supported by your installed Laravel version
-- XAMPP with MySQL/MariaDB
-- A fresh Laravel project (Laravel 11/12 recommended)
-
-## Install into XAMPP
-1. In `C:\xampp\htdocs`, create a Laravel project:
-   ```bash
-   composer create-project laravel/laravel SeniorCitizenSystem
-   cd SeniorCitizenSystem
-   ```
-2. Install Laravel Breeze for login/authentication (Blade):
-   ```bash
-   composer require laravel/breeze --dev
-   php artisan breeze:install blade
-   npm install
-   npm run build
-   ```
-3. Copy the files from this starter package into the matching folders of `SeniorCitizenSystem`, allowing the provided `routes/web.php` and layout/views to replace their equivalents. Keep Breeze's authentication routes in `routes/auth.php`.
-4. Create a MySQL database in phpMyAdmin named `senior_citizen_db`.
-5. Update `.env`:
-   ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=senior_citizen_db
-   DB_USERNAME=root
-   DB_PASSWORD=
-   ```
-6. Run:
-   ```bash
-   php artisan key:generate
-   php artisan migrate
-   php artisan serve
-   ```
-7. Open `http://127.0.0.1:8000`. Register an account through Breeze. For deployment, disable public registration and create accounts only for authorized staff.
-
 ## Included modules
 - Dashboard with live record counts
 - Senior citizen records: create, read, update, delete, search/filter
